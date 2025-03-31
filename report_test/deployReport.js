@@ -36,7 +36,8 @@ function findLatestEntry() {
 
         var sheet2 = SpreadsheetApp.getActiveSpreadsheet().insertSheet('報告出力');
 
-        var message = "@aさん @bさん\n\nサービスxxの工事を予定しているため、工事内容を報告させていただきます。\n\n1.工事時間\n" + formattedStart + " ~ " + formattedEnd + "\n2.工事内容\n" + body;
+        var message = "@aさん @bさん\n\nサービスxxの工事を予定しているため、工事内容を報告させていただきます。\n\n1.工事時間\n" + formattedStart + " ~ " + formattedEnd + "\n\n2.工事内容\n" + body;
+        sheet2.getRange("A1").setValue('↓に報告文が記入されるのでコピペして報告してください');
         sheet2.getRange("A2").setValue(message);
     } else {
         console.log("No matching data found.");
